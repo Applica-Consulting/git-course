@@ -497,5 +497,5 @@ through the changes that are being applied in the current commit, and see if it'
 
 ## Tasks
 Now that you have learnt the gist of it, let's try it out! There are multiple branches in this repo. They are
-in the format `task/description` and `soltion/description`. The solution represent a git state where the task has
+in the format `task/description` and `solution/description`. The solution represent a git state where the task has
 been completed. Your branch should look the same, apart from the commit hashes and message of course. Good luck!
