@@ -75,8 +75,22 @@ This specifically updates the branch to the origin of that branch. `cu` is for `
 (everywhere else).
 
 ### Tag
-A tag is just another type of pointer to a commit. This is often used for versioning. Tags are more difficult to
-delete, so if you have pushed a tag. Make sure it's safe to delete it. 
+In Git, a tag is a fixed reference or label that points to a specific commit in the repository's history. 
+Tags are used to mark significant points, such as releases or important milestones in your project.
+They provide a way to create permanent snapshots of your code at specific points in time.
+
+Imagine a Git commit history like this: 
+```
+A -- B -- C -- D -- E
+```
+* If you create a tag called "v1.0" at commit "C", it would look like this:
+```
+A -- B -- C (v1.0) -- D -- E
+```
+The "v1.0" tag serves as a static reference to commit "C", representing the code as it was at the time of the 1.0 release.
+t doesn't move automatically when new commits are made and remains fixed at that specific commit.
+
+Tags are more difficult to delete, so if you have pushed a tag. Make sure it's safe to delete it. 
 
 ### Push
 Pushing is just the act of pushing a branch or a tag to a remote. When pushing a new branch to a remote, you
@@ -109,7 +123,7 @@ commit. These changes can be code changes, or simply just editing the commit mes
 git add some/file.py # Optionally add some changes
 git commit --amend
 ```
-The will prompt for a new commit message, where you can either leave it be as it was, or change it.
+This will prompt for a new commit message, where you can either leave it be as it was, or change it.
 
 It is a very handy tool, which should definitely be put in your arsenal. 
 
@@ -422,7 +436,7 @@ Ok, so now let's talk about conflicts. Resolving conflicts can be a bit stressfu
 bad when you fully understand what a conflict truely is, and now that we've learnt so much about cherry-picking 
 and rebasing.
 
-As you may know, a conflict happens when two commits are to be merged (in a squashy fasion or in an actual merge),
+As you may know, a conflict happens when two commits are to be merged (in a squashy fashion or in an actual merge),
 and they touch the same part of the same file. Let's jump right into an example. Say we have this file.
 ```py
 def some_function():
@@ -457,7 +471,7 @@ def some_function():
     doing = "sum"
     stuff = "yeah"
 ```
-Ok, this looks better. But it doesn't quite make sense. We don't want `doint` defined twice, and we want the 
+Ok, this looks better. But it doesn't quite make sense. We don't want `doing` defined twice, and we want the 
 docstring to be right below the function definition:
 ```py
 def some_function():
